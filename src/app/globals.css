@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/*
+ * Brand colours taken from the Mohan Atta Chakki banners: golden wheat (main fill, used with dark
+ * text), leaf green (accent, used with white text and on white), deep forest green (ink: text,
+ * dark buttons, footer, admin sidebar). The roles are the same as before, only the colours changed.
+ */
+@theme inline {
+  --color-brand: #f5b82e;
+  --color-brand-dark: #e3a312;
+  --color-accent: #2e7d32;
+  --color-ink: #14361f;
+  /* Soft wheat-cream for the alternating light sections (bg-neutral-50). */
+  --color-neutral-50: #fbf7ec;
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-jost);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+}
+
+/* Service strip on the home page: scrolls left by one copy of the list, then repeats. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Account dropdown: quick fade + scale in (skipped for reduced motion via motion-safe:). */
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
